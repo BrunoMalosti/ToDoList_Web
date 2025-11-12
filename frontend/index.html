@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+<body>
+<div id="app">
+
+    <!-- Login -->
+    <div id="login" class="hidden">
+        <h2>Login</h2>
+        <input id="login_user" placeholder="Usuário">
+        <input id="login_pass" type="password" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <p>ou</p>
+        <button onclick="showRegister()">Cadastrar</button>
+    </div>
+
+    <!-- Registro -->
+    <div id="register" class="hidden">
+        <h2>Cadastrar Usuário</h2>
+        <input id="reg_nome" placeholder="Nome">
+        <input id="reg_sobrenome" placeholder="Sobrenome">
+        <input id="reg_nascimento" type="date" placeholder="Nascimento">
+        <input id="reg_login" placeholder="Login">
+        <input id="reg_senha" type="password" placeholder="Senha">
+        <button onclick="register()">Cadastrar</button>
+        <p>ou</p>
+        <button onclick="showLogin()">Login</button>
+    </div>
+
+    <!-- Tela Principal -->
+    <div id="main" class="hidden">
+        <h2>Minhas Tarefas</h2>
+        <button onclick="showTaskScreen()">Adicionar Nova Tarefa</button>
+        <ul id="task_list"></ul>
+        <button onclick="showCredits()">Créditos</button>
+        <button onclick="logout()">Sair</button>
+    </div>
+
+    <!-- Tela Nova / Editar Tarefa -->
+    <div id="task_screen" class="hidden">
+        <h2 id="task_screen_title">Nova Tarefa</h2>
+        <input id="task_titulo" placeholder="Título">
+        <textarea id="task_desc" placeholder="Descrição"></textarea>
+        <input type="date" id="task_due">
+        <select id="task_status">
+            <option value="aberta">Aberta</option>
+            <option value="concluida">Concluída</option>
+        </select>
+        <button onclick="saveTask()">Salvar</button>
+        <button onclick="cancelTask()">Cancelar</button>
+    </div>
+
+    <!-- Créditos -->
+    <div id="credits" class="hidden">
+        <h2>Créditos</h2>
+        <p>
+            Este aplicativo ToDo App foi desenvolvido com o objetivo de gerenciar tarefas pessoais de forma prática e intuitiva, permitindo criar, editar, concluir e excluir atividades, além de acompanhar prazos de maneira organizada.
+        </p>
+        <p>
+            Desenvolvimento realizado por: <strong>Bruno Malosti dos Santos</strong>. O projeto foi idealizado e implementado utilizando HTML, CSS e JavaScript, seguindo boas práticas de programação para garantir uma interface amigável e responsiva.
+        </p>
+        <p>
+            Agradecimentos especiais a todos que contribuíram com sugestões, testes e feedbacks durante o desenvolvimento, tornando este aplicativo mais eficiente e funcional.
+        </p>
+        <button onclick="showMain()">Voltar</button>
+    </div>
+
+
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>
